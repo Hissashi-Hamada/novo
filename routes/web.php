@@ -1,25 +1,14 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\ClientesController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', [UserController::class, 'index'])->name('home');
 
-Route::get('/', [UserController::class, 'index'])->name('home'); {
-    return view('welcome');
-};
+Route::get('/produto', [ProdutoController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('produto', function () {
-    return view('produtos.index');
-});
-
-Route::get('cliente', function () {
-    return view('cliente.index');
-});
-
-
-
-
+// Route::get('cliente',[ClientesController::class, 'index'], function () {
+//     return view('cliente.index');
+// });
