@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'index'])->name('home');
 
-Route::get('/produto', [ProdutoController::class, 'index']);
+Route::resource('/produto', ProdutoController::class);
 
-// Route::get('cliente',[ClientesController::class, 'index'], function () {
-//     return view('cliente.index');
-// });
+Route::resource('cliente', ClientesController::class);

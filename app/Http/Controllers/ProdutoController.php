@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ProdutoController extends Controller
 {
     public function index()
     {
-        return Produto::all();
+        $posts = Produto::all();
+        return View('produto.index');
+    }
+        
+    public function create()
+    {
+        return view('produto.index');
     }
 
     public function store(Request $request)
@@ -27,7 +34,7 @@ class ProdutoController extends Controller
 
     public function show($id)
     {
-        return Produto::findOrFail($id);
+        
     }
 
     public function update(Request $request, $id)
@@ -42,9 +49,8 @@ class ProdutoController extends Controller
             'status' => 'sometimes|boolean'
         ]);
 
-        $produto->update($data);
-
-        return $produto;
+        return redirect()->route('produto.index')->with('success', 'Produto atualizado com sucesso');
+        
     }
 
     public function destroy($id)
