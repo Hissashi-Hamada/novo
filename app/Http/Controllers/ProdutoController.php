@@ -56,7 +56,7 @@ class ProdutoController extends Controller
     public function destroy($id)
     {
         $produto = Produto::findOrFail($id);
-        $produto->delete();
+        return view('Produto.edit', compact('post') );
 
         return response()->json(['mensagem' => 'Produto removido com sucesso']);
     }
