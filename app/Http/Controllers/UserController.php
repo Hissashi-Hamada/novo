@@ -9,7 +9,6 @@ class UserController extends Controller
 {
     public function index(User $user, Request $request)
     {
-        $user = User::all();
-        return view('welcome', compact('users'));
+        return view ('produto.create'); //depois colocar como cliente
     }
 }

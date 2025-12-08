@@ -9,4 +9,4 @@ Route::get('/', [UserController::class, 'index'])->name('home');
 
 Route::resource('/produto', ProdutoController::class);
 
-Route::resource('cliente', ClientesController::class);
+Route::resource('/cliente', ClientesController::class);

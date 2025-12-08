@@ -8,7 +8,6 @@ class Produto extends Model
 {
     protected $fillable = [
         'nome',
-        'cpf',
         'descricao',
         'valor',
         'quantidade',
@@ -16,7 +15,8 @@ class Produto extends Model
     ];
 
     protected $casts = [
-        'descricao' => 'date',
+        // 'descricao' => 'date', // removido: descricao é texto
         'valor' => 'decimal:2',
+        'quantidade' => 'integer',
     ];
 }
