@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'index'])->name('home');
 
-Route::resource('/produto', ProdutoController::class);
+Route::resource('/produto', ProdutoController::class)->$_SESSION (''),
+    return view ('layout.app');    
+;
 
 Route::resource('/cliente', ClientesController::class);
+
